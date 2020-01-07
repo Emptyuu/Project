@@ -1,0 +1,394 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-size: 12px;
+  outline: none; }
+
+li {
+  list-style: none; }
+
+a {
+  text-decoration: none;
+  color: #5a5a5a; }
+
+input {
+  outline: none; }
+
+.w1200 {
+  width: 1200px;
+  margin: 0 auto; }
+
+.header {
+  background: #f2f2f2; }
+  .header a {
+    transition: color .3s linear; }
+  .header a:hover {
+    color: #d70057; }
+  .header .nav {
+    height: 29px;
+    border-bottom: 1px solid #dcdcdc; }
+    .header .nav .w1200 .tinfo {
+      float: right;
+      font: 12px/28px ""; }
+      .header .nav .w1200 .tinfo .shu {
+        color: #d9d9d9;
+        float: left; }
+      .header .nav .w1200 .tinfo .navinfo {
+        position: relative;
+        float: left;
+        text-align: center;
+        padding: 0 10px;
+        border: 1px solid #f2f2f2;
+        border-top: 0;
+        z-index: 999; }
+        .header .nav .w1200 .tinfo .navinfo .arrowtop {
+          background: url("http://0.js.al.okbuycdn.com/resources/images/v6/common/section-tigger.png") -30px -37px no-repeat;
+          width: 11px;
+          height: 7px;
+          display: inline-block;
+          margin-left: 4px;
+          position: relative; }
+        .header .nav .w1200 .tinfo .navinfo:hover {
+          background: white;
+          border: 1px solid #DCDCDC;
+          border-top: 0; }
+        .header .nav .w1200 .tinfo .navinfo:hover .navinfobtm {
+          background: white;
+          display: block; }
+        .header .nav .w1200 .tinfo .navinfo .navinfobtm {
+          display: none; }
+          .header .nav .w1200 .tinfo .navinfo .navinfobtm p {
+            text-align: initial;
+            line-height: 28px; }
+            .header .nav .w1200 .tinfo .navinfo .navinfobtm p a {
+              transition: color .3s linear; }
+            .header .nav .w1200 .tinfo .navinfo .navinfobtm p :hover {
+              color: #D70057; }
+          .header .nav .w1200 .tinfo .navinfo .navinfobtm img {
+            margin-top: 10px; }
+      .header .nav .w1200 .tinfo .unlogin {
+        float: left;
+        display: block;
+        margin-right: 10px; }
+        .header .nav .w1200 .tinfo .unlogin a,
+        .header .nav .w1200 .tinfo .unlogin span {
+          display: block;
+          float: left; }
+        .header .nav .w1200 .tinfo .unlogin .shu {
+          margin: 0 10px; }
+  .header .c {
+    height: 110px; }
+    .header .c .w1200 {
+      position: relative; }
+      .header .c .w1200 .logo {
+        float: left; }
+      .header .c .w1200 .search {
+        position: absolute;
+        left: 334px;
+        top: 24px; }
+        .header .c .w1200 .search .searching {
+          float: left;
+          width: 364px;
+          padding: 0 0 0 10px;
+          line-height: 32px;
+          height: 32px;
+          border: 3px solid #d70057; }
+        .header .c .w1200 .search .searchBtn {
+          float: left;
+          background: url("http://0.js.al.okbuycdn.com/resources/images/v6/common/common-thumb.png") -31px -4px no-repeat;
+          width: 98px;
+          height: 38px;
+          border: 0; }
+      .header .c .w1200 .hotWords {
+        position: absolute;
+        left: 338px;
+        top: 72px;
+        height: 16px;
+        width: 420px;
+        overflow: hidden; }
+        .header .c .w1200 .hotWords a {
+          margin-right: 10px; }
+      .header .c .w1200 .cart {
+        background: #ffda73 url("http://0.js.al.okbuycdn.com/resources/images/v6/common/common-thumb.png") -238px -4px no-repeat;
+        width: 248px;
+        height: 32px;
+        color: #444;
+        position: absolute;
+        line-height: 39px;
+        right: 10px;
+        top: 30px; }
+        .header .c .w1200 .cart span {
+          height: 28px;
+          width: 175px;
+          background-color: #fff;
+          display: block;
+          line-height: 28px;
+          text-align: center;
+          position: absolute;
+          right: 2px;
+          top: 2px; }
+        .header .c .w1200 .cart b {
+          padding: 0 5px;
+          color: #d70057;
+          font-weight: normal; }
+  .header .nnav {
+    height: 40px;
+    width: 100%;
+    background-color: #000; }
+    .header .nnav .w1200 {
+      position: relative; }
+      .header .nnav .w1200 .nnavwrap li:first-child a {
+        background-color: #d70057; }
+      .header .nnav .w1200 .nnavwrap .cur {
+        width: 100px;
+        text-align: center;
+        float: left;
+        display: block;
+        color: #fff;
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        transition: color .3s linear; }
+      .header .nnav .w1200 .nnavwrap .nav:hover {
+        color: #d70057; }
+      .header .nnav .w1200 .navvsub {
+        display: none;
+        position: absolute;
+        top: 40px;
+        left: 0;
+        z-index: 900;
+        max-width: 1200px;
+        height: 400px;
+        background-color: #fff;
+        box-shadow: 2px 2px 4px #acacac; }
+      .header .nnav .w1200 .colbox {
+        display: inline-block;
+        float: left;
+        padding: 10px 12px;
+        height: 352px;
+        overflow: hidden;
+        border-right: 1px dashed #aeaeae; }
+        .header .nnav .w1200 .colbox h3 {
+          font-size: 12px;
+          font-weight: bold;
+          color: #d20d33; }
+        .header .nnav .w1200 .colbox .catewrap {
+          width: 360px;
+          line-height: 12px;
+          padding-top: 12px;
+          overflow: hidden; }
+          .header .nnav .w1200 .colbox .catewrap .black {
+            color: #5e5e5e; }
+          .header .nnav .w1200 .colbox .catewrap .context {
+            margin-top: 16px; }
+            .header .nnav .w1200 .colbox .catewrap .context a {
+              float: left;
+              display: inline;
+              margin-right: 15px;
+              margin-bottom: 8px;
+              white-space: nowrap;
+              color: #5e5e5e;
+              overflow: hidden; }
+
+.banner #bannert {
+  height: 350px;
+  width: 100%;
+  background-image: url(http://i.okaybuy.cn/static/8ca3b5fc20821d41789eb389839fcd57.jpg);
+  background-position: center top;
+  background-repeat: no-repeat; }
+  .banner #bannert .w1200 {
+    position: relative; }
+    .banner #bannert .w1200 .left {
+      position: absolute;
+      width: 22px;
+      height: 36px;
+      top: 150px;
+      background: url("http://0.js.al.okbuycdn.com/resources/images/v6/index/slideconcroll.png") no-repeat 0 0;
+      z-index: 200;
+      display: block; }
+    .banner #bannert .w1200 .right {
+      position: absolute;
+      width: 22px;
+      height: 36px;
+      top: 150px;
+      right: 0;
+      background: url("http://0.js.al.okbuycdn.com/resources/images/v6/index/slideconcroll.png") no-repeat 0 0;
+      z-index: 200;
+      display: block;
+      transform: rotateY(180deg); }
+
+.brand {
+  height: 315px;
+  background-color: #f5f5f5;
+  width: 100%; }
+  .brand .w1200 .brandin {
+    width: 1200px;
+    height: 194px;
+    overflow: hidden;
+    margin-top: 4px; }
+    .brand .w1200 .brandin .brandinin a {
+      width: 99px;
+      height: 64px;
+      background-color: #fff;
+      display: block;
+      float: left;
+      border-right: 1px solid #f5f5f5;
+      border-bottom: 1px solid #f5f5f5;
+      text-align: center; }
+      .brand .w1200 .brandin .brandinin a img {
+        margin-top: 7px; }
+
+.list2 {
+  margin-top: 30px; }
+  .list2 ul {
+    width: 110%; }
+    .list2 ul li {
+      margin-right: 10px;
+      margin-bottom: 10px;
+      float: left; }
+      .list2 ul li a {
+        border: 1px solid #e9e7ea;
+        display: block;
+        float: left;
+        position: relative;
+        width: 593px;
+        height: 208px; }
+        .list2 ul li a:hover {
+          border: 1px solid #d70057; }
+        .list2 ul li a img {
+          position: absolute;
+          left: 0;
+          top: 0;
+          z-index: 1;
+          width: 593px;
+          height: 208px; }
+        .list2 ul li a span {
+          position: absolute;
+          z-index: 2;
+          left: 0;
+          color: #333;
+          font-size: 12px;
+          line-height: 18px;
+          width: 200px;
+          text-align: center; }
+        .list2 ul li a .tit1 {
+          top: 76px; }
+        .list2 ul li a .tit2 {
+          top: 94px; }
+        .list2 ul li a .tit3 {
+          top: 144px;
+          line-height: 18px;
+          color: #d70057;
+          font-size: 20px;
+          font-weight: bold; }
+        .list2 ul li a .time {
+          top: 180px;
+          bottom: 10x; }
+
+.list3 {
+  overflow: hidden; }
+  .list3 .list3in ul {
+    width: 110%; }
+    .list3 .list3in ul li {
+      float: left;
+      margin-right: 15px;
+      margin-bottom: 15px; }
+      .list3 .list3in ul li a {
+        display: block;
+        border: 1px solid #e9e7ea;
+        width: 388px;
+        height: 329px;
+        position: relative; }
+        .list3 .list3in ul li a:hover {
+          border: 1px solid #d70057; }
+        .list3 .list3in ul li a .list3tit1 {
+          position: absolute;
+          z-index: 2;
+          left: 20px;
+          bottom: 50px;
+          color: #333;
+          line-height: 18px;
+          width: 250px;
+          font-size: 18px; }
+          .list3 .list3in ul li a .list3tit1 span {
+            color: #d70057;
+            font-weight: bold;
+            font-size: 18px; }
+        .list3 .list3in ul li a .time {
+          position: absolute;
+          z-index: 2;
+          left: 20px;
+          bottom: 20px;
+          color: #666; }
+
+.footer {
+  border-top: solid 1px #a6a6a6;
+  margin-top: 40px; }
+  .footer .conn {
+    border: solid 1px #c3c3c3;
+    background-color: #e6e6e6;
+    padding: 28px 0 0 0; }
+    .footer .conn .w1200 {
+      width: 1250px; }
+      .footer .conn .w1200 .qd {
+        overflow: hidden;
+        margin-left: 26px; }
+        .footer .conn .w1200 .qd .footer_code {
+          padding-bottom: 10px;
+          float: left;
+          overflow: hidden;
+          margin-left: 90px;
+          width: 480px;
+          margin: 0 0 0 35px;
+          text-align: center;
+          background-color: #fff; }
+          .footer .conn .w1200 .qd .footer_code .wx_code {
+            float: left;
+            width: 120px;
+            text-align: center;
+            margin-right: 60px;
+            margin-left: 60px; }
+            .footer .conn .w1200 .qd .footer_code .wx_code img {
+              width: 90px;
+              margin-top: 20px; }
+            .footer .conn .w1200 .qd .footer_code .wx_code p {
+              margin-top: 8px;
+              text-align: center;
+              font-size: 14px;
+              color: #333; }
+        .footer .conn .w1200 .qd .abm {
+          float: right; }
+          .footer .conn .w1200 .qd .abm li {
+            float: left;
+            width: 120px;
+            display: inline;
+            border-left: solid 1px #fff;
+            margin-right: 30px; }
+            .footer .conn .w1200 .qd .abm li .tit {
+              line-height: 24px;
+              background-color: #fff;
+              margin-bottom: 14px;
+              font-size: 14px;
+              color: #999; }
+            .footer .conn .w1200 .qd .abm li p {
+              padding-left: 20px;
+              line-height: 24px; }
+        .footer .conn .w1200 .qd .oklogo {
+          overflow: hidden;
+          padding-top: 45px;
+          clear: both;
+          text-align: center; }
+          .footer .conn .w1200 .qd .oklogo a img {
+            margin: 0 10px; }
+        .footer .conn .w1200 .qd .about {
+          line-height: 42px;
+          text-align: center;
+          color: #d7d7d7; }
+          .footer .conn .w1200 .qd .about a {
+            color: #777; }
+
+.bt {
+  background-color: #232323;
+  text-align: center;
+  color: #999;
+  line-height: 24px; }
