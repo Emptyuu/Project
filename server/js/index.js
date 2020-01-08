@@ -1,4 +1,4 @@
-require(["js/ajax.js"], function (ajax) {
+require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
     class Indexload {
         constructor() {
             this.list2 = document.querySelector("#list2");
@@ -6,17 +6,57 @@ require(["js/ajax.js"], function (ajax) {
             this.list3 = document.querySelector("#list3");
             this.sport = document.querySelector("#sport");
             this.colbox = document.querySelector("#colbox");
+            this.banner = document.querySelector("#banner");
+            this.bul = document.querySelector("#banner .ben ul")
+            this.bol = document.querySelector(".progress-bar-ol")
+            this.prev = document.querySelector(".prev");
+            this.next = document.querySelector(".next");
             this.addEvent();
+            this.index=0;
             this.res = "";
             this.getList1();
+            this.createBanner();
+            0
         }
-        addEvent(){
+        createBanner() {
+            let url = ["http://i.okaybuy.cn/static/8387f61b4bb47d1053f5e38c1ba9712e.jpg"
+            ,"http://i.okaybuy.cn/static/02023b269d73dc0233bcaa83ef30c3dd.jpg"
+        ,"http://i.okaybuy.cn/static/8ca3b5fc20821d41789eb389839fcd57.jpg"];
+            let str = "";
+            let dot = "";
+            for (let i = 0 ; i<url.length;i++) {//var i in that.res
+                str += ` 
+                        <li style="background: red;"  index=${i}><a href="#"><img src="${url[i]}" alt=""></a></li>`
+                dot += `<li class ="odot"><a class="circle" index=${i}>${i}</a></li>`;
+            }
+            this.bul.innerHTML = str;
+            this.bol.innerHTML = dot;
+            this.bol.children[0].children[0].className = "active circle";
+            let swpierobj = swiper;
+            swpierobj.init({
+                dom: this.banner,
+                bul: this.bul,
+                bol: this.bol,
+                prevClassName: this.prev.className,
+                nextClassName: this.next.className,
+                index: this.index
+            });
+        }
+        addEvent() {
             let that = this;
-            this.sport.onmouseover = function(){
+            this.sport.onmouseover = function () {
                 that.colbox.style.display = "block";
             }
-            this.sport.onmouseout = function(){
+            this.sport.onmouseout = function () {
                 that.colbox.style.display = "none";
+            }
+            this.banner.onmouseover = function () {
+                that.prev.style.display = "block";
+                that.next.style.display = "block";
+            }
+            this.banner.onmouseout = function () {
+                that.prev.style.display = "none";
+                that.next.style.display = "none";
             }
         }
 

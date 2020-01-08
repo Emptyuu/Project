@@ -14,6 +14,241 @@ a {
 input {
   outline: none; }
 
+#banner {
+  width: 100%;
+  height: 350px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; }
+  #banner .benul {
+    width: 100%;
+    height: 430px;
+    line-height: 430px;
+    list-style: none;
+    position: relative;
+    display: inline-block; }
+    #banner .benul li {
+      left: 0px;
+      height: 430px;
+      opacity: 0;
+      position: absolute;
+      width: 100%;
+      transition: .5s ease-in; }
+      #banner .benul li:nth-child(1) {
+        opacity: 1; }
+      #banner .benul li a {
+        display: block;
+        background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/loading1.gif) no-repeat center center;
+        position: relative; }
+  #banner .leftrightbtn {
+    position: absolute;
+    width: 1200px;
+    height: 60px;
+    top: 150px;
+    left: 0;
+    right: 0;
+    margin: 0 auto; }
+    #banner .leftrightbtn .prev {
+      width: 30px;
+      height: 60px;
+      line-height: 70px;
+      margin-left: -10px;
+      background-image: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/bg_direction_nav.png);
+      cursor: pointer;
+      pointer-events: auto;
+      float: left;
+      display: none; }
+      #banner .leftrightbtn .prev:hover {
+        background-position: 0 -60px; }
+    #banner .leftrightbtn .next {
+      margin-right: 10px;
+      display: none;
+      float: right;
+      width: 30px;
+      height: 60px;
+      line-height: 70px;
+      background-image: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/bg_direction_nav.png);
+      background-position: -30px 0;
+      cursor: pointer;
+      pointer-events: auto; }
+      #banner .leftrightbtn .next:hover {
+        background-position: -30px -60px; }
+  #banner .progress-bar-ol {
+    height: 14px;
+    line-height: 14px;
+    list-style: none;
+    visibility: hidden;
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    display: inline-block;
+    z-index: 6; }
+    #banner .progress-bar-ol li {
+      min-width: 15px;
+      *width: 25px;
+      height: 14px;
+      text-align: center;
+      float: left;
+      margin-right: 8px; }
+      #banner .progress-bar-ol li a {
+        width: 6px;
+        height: 6px;
+        display: inline-block;
+        border: 1px solid #cecece;
+        border-radius: 4px;
+        background: #fff;
+        text-indent: -999px;
+        overflow: hidden; }
+      #banner .progress-bar-ol li .active {
+        width: 8px;
+        height: 8px;
+        display: inline-block;
+        border: 3px solid #ccc;
+        border-radius: 7px;
+        background: #000;
+        text-indent: -999px;
+        overflow: hidden; }
+  #banner .banner-recommend {
+    width: 215px;
+    height: 420px;
+    margin-left: 380px;
+    position: absolute;
+    left: 50%;
+    top: 5px;
+    overflow: hidden;
+    z-index: 12; }
+    #banner .banner-recommend .banner-recommend_bg {
+      width: 215px;
+      height: 420px;
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: #fff; }
+    #banner .banner-recommend .ban_tit0 {
+      width: 187px;
+      height: 96px;
+      padding: 14px 14px 0;
+      border-bottom: 1px solid #eee;
+      position: relative;
+      z-index: 5; }
+      #banner .banner-recommend .ban_tit0 .ban_tit0_d1 {
+        height: 69px; }
+        #banner .banner-recommend .ban_tit0 .ban_tit0_d1 .ban_tit_tx {
+          color: #666; }
+          #banner .banner-recommend .ban_tit0 .ban_tit0_d1 .ban_tit_tx .ban_tit_txd {
+            width: 130px;
+            height: 40px;
+            float: right;
+            margin-top: 4px; }
+            #banner .banner-recommend .ban_tit0 .ban_tit0_d1 .ban_tit_tx .ban_tit_txd p a {
+              color: #666;
+              text-decoration: none; }
+              #banner .banner-recommend .ban_tit0 .ban_tit0_d1 .ban_tit_tx .ban_tit_txd p a:hover {
+                color: #ff6f6f;
+                text-decoration: underline; }
+        #banner .banner-recommend .ban_tit0 .ban_tit0_d1 .ban_txta {
+          width: 200px;
+          margin-top: 10px; }
+          #banner .banner-recommend .ban_tit0 .ban_tit0_d1 .ban_txta a {
+            width: 185px;
+            height: 26px;
+            line-height: 26px;
+            text-align: center;
+            border: none;
+            border-radius: 1px;
+            background: #fff3f5;
+            color: #ff6f6f; }
+            #banner .banner-recommend .ban_tit0 .ban_tit0_d1 .ban_txta a:hover {
+              background: #ff6f6f;
+              color: #fff; }
+    #banner .banner-recommend .ban_tit1 {
+      height: 110px;
+      margin: 10px 15px 0;
+      font-family: '\5FAE\8F6F\96C5\9ED1';
+      background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/ban_tit11.png) no-repeat 0 0;
+      position: relative;
+      overflow: hidden; }
+      #banner .banner-recommend .ban_tit1 .ban_more {
+        padding-right: 14px;
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: #999; }
+        #banner .banner-recommend .ban_tit1 .ban_more:hover {
+          color: #ff6f6f;
+          text-decoration: underline; }
+      #banner .banner-recommend .ban_tit1 .ban_qnew {
+        height: 75px;
+        margin-top: 30px;
+        line-height: 25px; }
+        #banner .banner-recommend .ban_tit1 .ban_qnew li {
+          width: 178px;
+          margin-left: 5px;
+          line-height: 25px;
+          color: #666;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis; }
+          #banner .banner-recommend .ban_tit1 .ban_qnew li a {
+            color: #666; }
+            #banner .banner-recommend .ban_tit1 .ban_qnew li a:hover {
+              text-decoration: underline;
+              color: #ff6f6f; }
+          #banner .banner-recommend .ban_tit1 .ban_qnew li span {
+            margin-right: 6px;
+            font-weight: 700; }
+    #banner .banner-recommend .ban_tit2 {
+      width: 217px;
+      height: 182px;
+      font-family: '\5FAE\8F6F\96C5\9ED1';
+      position: absolute;
+      bottom: 0;
+      left: 0; }
+      #banner .banner-recommend .ban_tit2 .ban_life {
+        margin: 0 auto;
+        overflow: hidden;
+        border-top: 1px solid #eee; }
+        #banner .banner-recommend .ban_tit2 .ban_life li {
+          width: 71px;
+          float: left;
+          border-bottom: 1px solid #eee;
+          border-right: 1px solid #eee;
+          text-align: center;
+          padding-top: 7px;
+          height: 53px; }
+          #banner .banner-recommend .ban_tit2 .ban_life li a {
+            display: block;
+            color: #666; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a:hover {
+              text-decoration: underline;
+              color: #ff6f6f; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a:hover .life_i {
+              background-position: 0 -28px; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_i {
+              width: 42px;
+              height: 28px;
+              margin: 0 auto; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_i1 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_i1.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_iz1 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_iz1.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_i4 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_i4.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_iz2 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_iz2.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_iz3 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_iz3.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_iz4 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_iz4.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_i6 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_i6.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_i9 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_i9.png) no-repeat 0 0; }
+            #banner .banner-recommend .ban_tit2 .ban_life li a .life_i3 {
+              background: url(//img.iblimg.com/respc-1/resources/v4.2/css/i/life_i3.png) no-repeat 0 0; }
+
 .w1200 {
   width: 1200px;
   margin: 0 auto; }

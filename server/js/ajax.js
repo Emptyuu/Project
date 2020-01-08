@@ -1,8 +1,8 @@
 define([], function () {
     class Ajax {
         init(options) {
-            var that = this;
-            var p = new Promise(function (success) {
+            let that = this;
+            let p = new Promise(function (success) {
                 that.url = options.url;
                 that.data = options.data || {};
                 let str = "";
@@ -10,7 +10,7 @@ define([], function () {
                 for (var i in that.data) {
                     str += `${i}=${that.data[i]}&`;
                 }
-                that.url = that.url + "?" + str + "__retr0__=" + new Date().getTime();
+                that.url = that.url + "?" + str + "_empty_=" + new Date().getTime();
                 xhr.open("get", that.url, true);
                 xhr.onreadystatechange = function () {
                     if (xhr.readyState === 4 && xhr.status === 200) {
