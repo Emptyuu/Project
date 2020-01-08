@@ -22,14 +22,16 @@ require(["js/ajax.js"], function (ajax) {
             let str = "";
             for (let i = 0; i < this.res.length; i++) {
                 str += `
-                <div class="goods">
+                <div class="goods" goodsid="${this.res[i].goodsid}">
+                <a href="more.html">
                     <img
                         src="${this.res[i].img}" />
+                </a>
                     <span class="logo">
                         <img
                             src="${this.res[i].logo}" />
                     </span>
-                    <a class="tit">${this.res[i].tit}</a>
+                    <a href="more.html" class="tit">${this.res[i].tit}</a>
                     <p class="zt">
                         ￥
                         <span class="now">${this.res[i].now}</span>
@@ -39,6 +41,12 @@ require(["js/ajax.js"], function (ajax) {
                 `
             }
             this.list.innerHTML = str;
+            let goods = document.querySelectorAll(".goods");
+            for(let i = 0;i<goods.length;i++){
+                goods[i].onclick = function(e){
+                    console.log(e.target.parentNode.getAttribute("goodsid"))
+                }
+            }
         }
     }
     new Search();

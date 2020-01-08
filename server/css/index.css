@@ -2,7 +2,8 @@
   margin: 0;
   padding: 0;
   font-size: 12px;
-  outline: none; }
+  outline: none;
+  user-select: none; }
 
 li {
   list-style: none; }
@@ -627,3 +628,24 @@ input {
   text-align: center;
   color: #999;
   line-height: 24px; }
+
+.floor {
+  position: fixed;
+  left: 5%;
+  bottom: 5%;
+  border-top: 1px solid #eee;
+  border-left: 1px solid #eee;
+  z-index: 9999;
+  background-color: #FFF; }
+  .floor div {
+    transition: .5s;
+    height: 50px;
+    width: 50px;
+    font-size: 16px;
+    line-height: 50px;
+    color: #999;
+    border-right: 1px solid #eee;
+    border-bottom: 1px solid #eee; }
+  .floor div:hover {
+    background: #eee;
+    color: #5a5a5a; }

@@ -11,20 +11,22 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
             this.bol = document.querySelector(".progress-bar-ol")
             this.prev = document.querySelector(".prev");
             this.next = document.querySelector(".next");
+            this.gotop = document.querySelector("#gotop");
+            this.gobottom = document.querySelector("#gobottom");
+            this.timer;
+            this.speed;
             this.addEvent();
-            this.index=0;
+            this.index = 0;
             this.res = "";
             this.getList1();
             this.createBanner();
             0
         }
         createBanner() {
-            let url = ["http://i.okaybuy.cn/static/8387f61b4bb47d1053f5e38c1ba9712e.jpg"
-            ,"http://i.okaybuy.cn/static/02023b269d73dc0233bcaa83ef30c3dd.jpg"
-        ,"http://i.okaybuy.cn/static/8ca3b5fc20821d41789eb389839fcd57.jpg"];
+            let url = ["http://i.okaybuy.cn/static/8387f61b4bb47d1053f5e38c1ba9712e.jpg", "http://i.okaybuy.cn/static/02023b269d73dc0233bcaa83ef30c3dd.jpg", "http://i.okaybuy.cn/static/8ca3b5fc20821d41789eb389839fcd57.jpg"];
             let str = "";
             let dot = "";
-            for (let i = 0 ; i<url.length;i++) {//var i in that.res
+            for (let i = 0; i < url.length; i++) { //var i in that.res
                 str += ` 
                         <li style="background: red;"  index=${i}><a href="#"><img src="${url[i]}" alt=""></a></li>`
                 dot += `<li class ="odot"><a class="circle" index=${i}>${i}</a></li>`;
@@ -57,6 +59,35 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
             this.banner.onmouseout = function () {
                 that.prev.style.display = "none";
                 that.next.style.display = "none";
+            }
+
+            this.gotop.onclick = function () {
+                clearInterval(that.timer);
+                that.timer = setInterval(() => {
+                    if(document.documentElement.scrollTop == 0){
+                        clearInterval(that.timer);
+                    }
+                    that.speed = document.documentElement.scrollTop / 20
+                    if (that.speed < 5) {
+                        that.speed = 5;
+                    }
+                    document.documentElement.scrollTop -= that.speed
+                }, 20);
+            }
+
+            this.gobottom.onclick = function () {
+                clearInterval(that.timer);
+                that.timer = setInterval(() => {
+                    that.speed = (document.body.offsetHeight - document.documentElement.clientHeight - document.documentElement.scrollTop) / 20
+                    if (that.speed < 5) {
+                        that.speed = 5;
+                    }
+                    document.documentElement.scrollTop += that.speed;
+                    if (document.documentElement.scrollTop == document.body.offsetHeight - document.documentElement.clientHeight) {
+                        clearInterval(that.timer);
+                        console.log
+                    }
+                }, 20);
             }
         }
 
