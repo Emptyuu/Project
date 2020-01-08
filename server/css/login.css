@@ -19,6 +19,7 @@
   border: 1px solid #eee;
   margin-top: 40px; }
   .register .inp input {
+    width: 320px;
     line-height: 48px;
     border: 0;
     padding-left: 10px;

@@ -80,7 +80,7 @@ input {
           border: 1px solid #e0e0e0; }
           .loginwarpper .login .register .phone .phonediv #phonenum {
             height: 46px;
-            width: 325px;
+            width: 330px;
             font-size: 14px;
             line-height: 46px;
             padding-left: 10px;
@@ -141,9 +141,14 @@ input {
             width: 140px; }
         .loginwarpper .login .register .yzm .right {
           float: right; }
-          .loginwarpper .login .register .yzm .right img {
+          .loginwarpper .login .register .yzm .right span {
+            display: inline-block;
             margin: 7px 0 0 0;
-            width: 100px; }
+            width: 100px;
+            height: 36px;
+            font: bold 22px/36px "";
+            text-align: center;
+            border: 1px solid #999; }
       .loginwarpper .login .register .yzmerror {
         opacity: 0;
         height: 30px;

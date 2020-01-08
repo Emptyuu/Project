@@ -43,7 +43,7 @@
                 </div>
                 <div class="phone">
                     <div class="phonediv">
-                        <input id="phonenum" placeholder="请输入手机号" />
+                        <input id="phonenum" type="text" placeholder="请输入手机号" />
                     </div>
                 </div>
                 <div class="registererror">
@@ -52,7 +52,7 @@
                 </div>
                 <div class="pass">
                     <div class="passdiv">
-                        <input id="passnum" placeholder="设置密码" />
+                        <input id="passnum" type="password" placeholder="设置密码" />
                     </div>
                 </div>
                 <div class="passerror">
@@ -61,10 +61,11 @@
                 </div>
                 <div class="yzm">
                     <div class="left">
-                        <input type="text" placeholder="图形验证码" />
+                        <input type="text" id="yzm" placeholder="图形验证码" />
                     </div>
                     <div class="right">
-                        <img src="http://www.okbuy.com/Verify/getcode/0.16914930013832685" />
+                        <span id="VerifyCode"></span>
+                        <!-- <img src="http://www.okbuy.com/Verify/getcode/0.16914930013832685" /> -->
                     </div>
                 </div>
                 <div class="yzmerror">
@@ -82,5 +83,6 @@
         <p>Copyright © 2007-2020 OkBuy.com All Rights Reserved           天津好乐买信息技术有限公司  津B2-20140020  京公网安备 110105006859</p>
     </div>
 </body>
-
+<script src="js/require.js"></script>
+<script src="js/register.js"></script>
 </html>

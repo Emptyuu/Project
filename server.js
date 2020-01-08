@@ -2,6 +2,7 @@ const http = require("http");
 const fs = require("fs");
 const url = require("url");
 const querystring = require("querystring");
+let kehu = [];
 
 http.createServer((req, res) => {
     if (req.url != "/favicon.ico") {
@@ -47,6 +48,15 @@ function ajaxHandle(req, res) {
             case "1":
                 getFile("server/" + data.file, res);
                 break;
+            case "2":
+                verify(data.phone, data.pass, res);
+                break;
+            case "3":
+                login(data.phone, data.pass, res);
+                break;
+            case "200":
+                postVerifyCode(res);
+                break;
         }
     })
 }
@@ -61,4 +71,56 @@ function getFile(path, res) {
         }
         res.end();
     })
+}
+
+function verify(phone, pass, res) {
+    let a = 0; //默认没有此用户
+    for (let i = 0; i < kehu.length; i++) {
+        if (kehu[i].phone == phone) { //有用户终止循环且返回
+            a = 1; //用户存在
+            res.write(JSON.stringify({
+                registerStatus: "1"
+            }));
+            break;
+        }
+    }
+    if (!a) {
+        kehu.push({
+            phone: phone,
+            pass: pass
+        });
+        res.write(JSON.stringify({
+            registerStatus: "2" //注册成功
+        }));
+        console.log(kehu);
+    }
+    res.end();
+}
+
+function postVerifyCode(res) {
+    let random = parseInt(Math.random() * (9999 - 1000) + 1000);
+    res.write(JSON.stringify({
+        code: random
+    }))
+    res.end();
+}
+
+function login(phone, pass, res) {
+    let status = 0; //默认没有此用户
+    console.log(kehu.length)
+    for (let i = 0; i < kehu.length; i++) {
+        if (kehu[i].phone == phone) { //有用户
+            status = 1; //找到用户
+            if (kehu[i].pass == pass) {
+                
+                status = 2; //密码正确
+            }
+            break;
+        }
+    }
+    res.write(JSON.stringify({
+        loginStatus: status
+    }));
+
+    res.end();
 }

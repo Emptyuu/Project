@@ -111,5 +111,4 @@ require(["js/ajax.js"], function (ajax) {
         }
     }
     new Indexload();
-
 })
