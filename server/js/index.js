@@ -2,7 +2,7 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
     class Indexload {
         constructor() {
             this.list2 = document.querySelector("#list2");
-            this.list1 = document.querySelector("#list1");
+            this.list1 = document.queryS    elector("#list1");
             this.list3 = document.querySelector("#list3");
             this.sport = document.querySelector("#sport");
             this.colbox = document.querySelector("#colbox");
@@ -13,6 +13,7 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
             this.next = document.querySelector(".next");
             this.gotop = document.querySelector("#gotop");
             this.gobottom = document.querySelector("#gobottom");
+            this.jsnav1 = document.querySelector("#jsnav1");
             this.timer;
             this.speed;
             this.addEvent();
@@ -20,7 +21,6 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
             this.res = "";
             this.getList1();
             this.createBanner();
-            0
         }
         createBanner() {
             let url = ["http://i.okaybuy.cn/static/8387f61b4bb47d1053f5e38c1ba9712e.jpg", "http://i.okaybuy.cn/static/02023b269d73dc0233bcaa83ef30c3dd.jpg", "http://i.okaybuy.cn/static/8ca3b5fc20821d41789eb389839fcd57.jpg"];
@@ -47,11 +47,24 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
         addEvent() {
             let that = this;
             this.sport.onmouseover = function () {
-                that.colbox.style.display = "block";
+                clearTimeout(that.timer);
+                that.jsnav1.style.display = "block";
             }
             this.sport.onmouseout = function () {
-                that.colbox.style.display = "none";
+                that.timer = setTimeout(() => {
+                    that.jsnav1.style.display = "none";
+                }, 10);
             }
+            this.jsnav1.onmouseover = function(){
+                clearTimeout(that.timer);
+            }
+            this.jsnav1.onmouseout = function(){
+                that.timer = setTimeout(() => {
+                    that.jsnav1.style.display = "none";
+                }, 10);
+            }
+
+
             this.banner.onmouseover = function () {
                 that.prev.style.display = "block";
                 that.next.style.display = "block";
@@ -68,8 +81,8 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
                         clearInterval(that.timer);
                     }
                     that.speed = document.documentElement.scrollTop / 20
-                    if (that.speed < 5) {
-                        that.speed = 5;
+                    if (that.speed < 3) {
+                        that.speed = 3;
                     }
                     document.documentElement.scrollTop -= that.speed
                 }, 20);
@@ -79,8 +92,8 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
                 clearInterval(that.timer);
                 that.timer = setInterval(() => {
                     that.speed = (document.body.offsetHeight - document.documentElement.clientHeight - document.documentElement.scrollTop) / 20
-                    if (that.speed < 5) {
-                        that.speed = 5;
+                    if (that.speed < 3) {
+                        that.speed = 3;
                     }
                     document.documentElement.scrollTop += that.speed;
                     if (document.documentElement.scrollTop == document.body.offsetHeight - document.documentElement.clientHeight) {
@@ -88,6 +101,9 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
                         console.log
                     }
                 }, 20);
+            }
+            document.onmousewheel = function(){
+                clearInterval(that.timer);
             }
         }
 
@@ -138,7 +154,7 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
             for (let i in this.res) {
                 // console.log(this.res[i].img);
                 str += `<li>
-                <a href="#">
+                <a href="search.html">
                     <img src="${this.res[i].img}" />
                     <span class="tit1">${this.res[i].tit1}</span>
                     <span class="tit2">${this.res[i].tit2}</span>
@@ -171,7 +187,7 @@ require(["js/ajax.js", "js/swiper.js"], function (ajax, swiper) {
             for (let i in this.res) {
                 // console.log(this.res[i].img);
                 str += `<li>
-                <a href="#">
+                <a href="search.html">
                     <img src="${this.res[i].img}" />
                     <p class="list3tit1">${this.res[i].tit1}<span>${this.res[i].tit2}</span></p>
                     <span class="time">${this.res[i].time}</span>

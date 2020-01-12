@@ -1,4 +1,4 @@
-require(["js/ajax.js"], function (ajax) {
+require(["js/ajax.js","js/cookie.js"], function (ajax,cookie) {
     class Search {
         constructor() {
             this.res = [];
@@ -42,9 +42,13 @@ require(["js/ajax.js"], function (ajax) {
             }
             this.list.innerHTML = str;
             let goods = document.querySelectorAll(".goods");
-            for(let i = 0;i<goods.length;i++){
-                goods[i].onclick = function(e){
-                    console.log(e.target.parentNode.getAttribute("goodsid"))
+            for (let i = 0; i < goods.length; i++) {
+                goods[i].onclick = function (e) {
+                    let goodsid = goods[i].getAttribute("goodsid")
+                    console.log(goodsid);
+                    if(goodsid != null){
+                        cookie.setCookie("selectid",goodsid);
+                    }
                 }
             }
         }

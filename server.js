@@ -13,15 +13,16 @@ http.createServer((req, res) => {
             fsHandle(req, res);
         }
     }
-}).listen("82", "localhost", function () {
-    console.log("server is running on http://localhost:82/index.html")
+}).listen("8888", "127.0.0.2", function () {
+    console.log("server is running on http://127.0.0.2:8888/index.html")
 });
 
 function fsHandle(req, res) {
-    let path = "server" + req.url;
+    let path = "server" + url.parse(req.url).pathname;
     if (path == "server/") {
         path = "server/index.html"
     }
+    console.log(path)
     fs.readFile(path, function (err, data) {
         if (err) {
             res.write("404");
